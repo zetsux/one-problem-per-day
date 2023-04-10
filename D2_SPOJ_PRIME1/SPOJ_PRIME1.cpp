@@ -49,6 +49,8 @@ void getPrimes(int low, int high)
 {
     int cp[high - low + 1];
     memset(cp, 1, sizeof(cp));
+    
+    if (low == 1) cp[0] = 0;
  
     for (int p = 2; p * p <= high; p++)
     {
@@ -59,20 +61,9 @@ void getPrimes(int low, int high)
         }
     }
  
-    if (low == 1) cp[0] = 0;
- 
-    int idx = 0, primes[high - low + 1];
     for (int i = low; i <= high; i++)
     {
-        if (cp[i - low])
-        {
-            primes[idx] = i;
-            idx++;
-        }
-    }
- 
-    for (int i = 0 ; i < idx ; i++) {
-        numput(primes[i]);
+        if (cp[i - low]) numput(i);
     }
 }
  
