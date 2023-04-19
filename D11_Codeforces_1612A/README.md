@@ -1,5 +1,7 @@
 # A. Distance
 
+Source : [Problem](https://codeforces.com/problemset/problem/1612/A)
+
 -   time limit per test 3 seconds
 -   memory limit per test 512 megabytes
 -   input standard input

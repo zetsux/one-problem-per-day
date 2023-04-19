@@ -1,5 +1,7 @@
 # Demining (eolymp 11335)
 
+Source : [Problem](https://www.eolymp.com/en/problems/11335)
+
 -   Time limit 1 second
 -   Memory limit 128 MiB
 
