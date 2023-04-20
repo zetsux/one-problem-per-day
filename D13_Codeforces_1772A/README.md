@@ -1,5 +1,7 @@
 # A. A+B?
 
+Source : [Problem](https://codeforces.com/problemset/problem/1772/A)
+
 -   time limit per test 2 seconds
 -   memory limit per test 512 megabytes
 -   input standard input
