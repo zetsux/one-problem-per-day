@@ -1,5 +1,7 @@
 # A. QAQ
 
+Source : [Problem](https://codeforces.com/problemset/problem/894/A)
+
 - time limit per test 1 second
 - memory limit per test 256 megabytes
 - input standard input
