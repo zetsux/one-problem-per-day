@@ -1,5 +1,7 @@
 # A. Playoff
 
+Source : [Problem](https://codeforces.com/problemset/problem/1651/A)
+
 -time limit per test2 seconds
 -memory limit per test512 megabytes
 -inputstandard input
