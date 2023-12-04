@@ -1,5 +1,7 @@
 # C. Restoring the Duration of Tasks
 
+Source : [Problem](https://codeforces.com/problemset/problem/1690/C)
+
 - time limit per test 2 seconds
 - memory limit per test 256 megabytes
 - input standard input
