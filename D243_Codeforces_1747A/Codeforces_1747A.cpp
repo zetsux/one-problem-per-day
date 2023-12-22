@@ -13,7 +13,7 @@ inline void numput (ll n)
   ll N = n, rev, count = 0;
   if (N == 0) {
     pc('0'); 
-    pc(' '); 
+    pc('\n'); 
     return;
   }
 
@@ -36,7 +36,7 @@ inline void numput (ll n)
     rev /= 10;
   }
   while (count--) pc('0');
-  pc(' ');
+  pc('\n');
 }
 
 ll numget()
@@ -53,15 +53,12 @@ ll numget()
 
 void solve()
 {
-  int n = numget();
-  if (n == 3) {
-    puts("-1"); return;
-  }
-
-  if (n >= 3) pc('3'); pc(' '); 
-  for (int i = 4 ; i <= n ; i++) numput(i);
-  pc('2'); pc(' ');  pc('1');
-  pc('\n');
+  ll n = numget(), posSum = 0, negSum = 0;
+  for (int i = 0 ; i < n ; i++) {
+    int tmp = numget();
+    if (tmp > 0) posSum += tmp;
+    else negSum += tmp;
+  } numput(abs(posSum + negSum));
 }
  
 int main()
