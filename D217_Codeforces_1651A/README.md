@@ -2,10 +2,10 @@
 
 Source : [Problem](https://codeforces.com/problemset/problem/1651/A)
 
--time limit per test2 seconds
--memory limit per test512 megabytes
--inputstandard input
--outputstandard output
+- time limit per test 2 seconds
+- memory limit per test 512 megabytes
+- input standard input
+- output standard output
 
 Consider a playoff tournament where 2n
 athletes compete. The athletes are numbered from 1
