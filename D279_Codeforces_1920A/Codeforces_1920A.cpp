@@ -71,7 +71,7 @@ void solve()
   n = r - l + 1;
   for (int i = 0 ; i < idx ; i++) {
     if (arr[i] >= l && arr[i] <= r) n--;
-  } numput(n);
+  } numput(n < 0 ? 0 : n);
 }
 
 int main()
