@@ -1,5 +1,7 @@
 # B. Arranging Cats
 
+Source : [Problem](https://codeforces.com/problemset/problem/1921/B)
+
 - time limit per test 2 seconds
 - memory limit per test 512 megabytes
 - input standard input
