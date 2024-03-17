@@ -52,23 +52,32 @@ ll numget()
   return value;
 }
 
-bool solve()
+void solve()
 {
-  int n = numget(), isTriangle = 0;
-  char str[n + 1];
-  for (int i = 0 ; i < n ; i++) {
-    gets(str);
-    if (isTriangle) continue;
+  int n = numget();
+  char str[101]; gets(str);
 
-    int cn1 = 0;
-    for (int j = 0 ; j < n ; j++) cn1 += (str[j] == '1');
-    if (cn1 == 1) isTriangle = 1;
-  } return isTriangle;
+  int l = 0, r = strlen(str) - 1;
+  while (l < r && str[l] == str[r]) {
+    l++; r--;
+  }
+
+  if (str[l] <= str[r]) {
+    if (n & 1) {
+      printf("%s", str);
+      for (int i = strlen(str) - 1 ; i >= 0 ; i--) pc(str[i]);
+      pc('\n');
+    } else puts(str);
+  } else {
+    for (int i = strlen(str) - 1 ; i >= 0 ; i--) pc(str[i]);
+    if (n & 1) pc('\n');
+    else puts(str);
+  }
 }
 
 int main()
 {
   int t = numget();
-  while (t--) puts(solve() ? "TRIANGLE" : "SQUARE");
+  while (t--) solve();
   return 0;
 }
