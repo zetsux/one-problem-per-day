@@ -36,21 +36,21 @@ Print one integer — the maximum number of problems Mishka can solve.
 
     5
 
-### Sample Input 1
+### Sample Input 2
 
     5 2
     3 1 2 1 3
 
-### Sample Output 1
+### Sample Output 2
 
     0
 
-### Sample Input 1
+### Sample Input 3
 
     5 100
     12 34 55 43 21
 
-### Sample Output 1
+### Sample Output 3
 
     5
 
