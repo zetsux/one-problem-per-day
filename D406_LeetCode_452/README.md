@@ -59,5 +59,7 @@ The balloons can be burst by 2 arrows:
 ## Constraints:
 
 1 <= `points.length` <= 10^5
+
 `points[i].length` == 2
+
 -2^31 <= `xstart` < `xend` <= (2^31) - 1
