@@ -12,6 +12,8 @@ Return the total number of provinces.
 
 ## Example 1:
 
+<img src="https://assets.leetcode.com/uploads/2020/12/24/graph1.jpg">
+
 ### Input:
 
     isConnected = [[1,1,0],[1,1,0],[0,0,1]]
@@ -21,6 +23,8 @@ Return the total number of provinces.
     2
 
 ## Example 2:
+
+<img src="https://assets.leetcode.com/uploads/2020/12/24/graph2.jpg">
 
 ### Input:
 
