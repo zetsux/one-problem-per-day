@@ -31,3 +31,41 @@ new:
 	@echo "🚀 Opening in $(EDITOR)..."
 	@$(EDITOR) $(ROOT_DIR)/$(NEW_DIR)/$(PLATFORM)_$(PROBLEM).$(EXT) $(ROOT_DIR)/$(NEW_DIR)/README.md
 	@echo "🎉 All set. Happy solving!"
+
+.PHONY: git
+git:
+	@if [ -z "$(LATEST_DAY)" ]; then \
+		echo "❌ No DXXX_ directories found. Nothing to commit."; \
+		exit 1; \
+	fi
+	@NUM=$(LATEST_DAY); \
+	if [ $$((NUM % 100)) -ge 11 ] && [ $$((NUM % 100)) -le 13 ]; then \
+		SUFFIX=th; \
+	else \
+		case $$((NUM % 10)) in \
+			1) SUFFIX=st ;; \
+			2) SUFFIX=nd ;; \
+			3) SUFFIX=rd ;; \
+			*) SUFFIX=th ;; \
+		esac; \
+	fi; \
+	ORDINAL=$$NUM$$SUFFIX; \
+	LAST_DIR=$$(ls -d D$$(printf "%03d" $$NUM)_* | head -n 1); \
+	BRANCH=task/add-$$ORDINAL-problem; \
+	MESSAGE="feat: add $$ORDINAL problem"; \
+	\
+	if [ -z "$$(git status --porcelain -- "$$LAST_DIR")" ]; then \
+		echo "❌ Latest folder ($$LAST_DIR) has no new changes to commit"; \
+		exit 1; \
+	fi; \
+	\
+	if git rev-parse --verify $$BRANCH >/dev/null 2>&1; then \
+		echo "❌ Branch $$BRANCH already exists"; \
+		exit 1; \
+	fi; \
+	\
+	echo "🚀 Creating branch: $$BRANCH"; \
+	git checkout -b $$BRANCH; \
+	git add "$$LAST_DIR"; \
+	git commit -m "$$MESSAGE"; \
+	git push -u origin $$BRANCH
