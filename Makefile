@@ -53,6 +53,22 @@ git:
 	LAST_DIR=$$(ls -d D$$(printf "%03d" $$NUM)_* | head -n 1); \
 	BRANCH=task/add-$$ORDINAL-problem; \
 	MESSAGE="feat: add $$ORDINAL problem"; \
+	\
+	if [ -z "$$(git status --porcelain -- "$$LAST_DIR")" ]; then \
+		echo "❌ Latest folder ($$LAST_DIR) has no new changes to commit"; \
+		exit 1; \
+	fi; \
+	\
+	if git rev-parse --verify $$BRANCH >/dev/null 2>&1; then \
+		echo "❌ Branch $$BRANCH already exists"; \
+		exit 1; \
+	fi; \
+	\
+	echo "🚀 Creating branch: $$BRANCH"; \
+	git checkout -b $$BRANCH; \
+	git add "$$LAST_DIR"; \
+	git commit -m "$$MESSAGE"; \
+	git push -u origin $$BRANCH; \
 	gh issue create \
 		--title "Add $$ORDINAL problem" \
 		--body  "# Add $$ORDINAL problem"; \
